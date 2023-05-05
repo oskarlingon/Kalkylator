@@ -13,7 +13,7 @@ knappar.forEach(knapp => {
         else if (knappValue === '=') {
             const expression = display.textContent;
             const result = eval(expression);
-          if (isNaN(result)) {
+        if(isNaN(result)) {
             display.textContent = 'Felaktig inmatning';
             } else {
             display.textContent = result;
@@ -22,11 +22,14 @@ knappar.forEach(knapp => {
         display.textContent += '*';
       } else if (knappValue === '÷') {
         display.textContent += '/';
-      } else if (knappValue === '[') {
+      } else if (knappValue === '(') {
         display.textContent += '(';
       } else if (knappValue === ')') {
         display.textContent += ')';
-      } else {
+      } else if (knappValue === ',') {
+        display.textContent += ',';
+      }
+      else {
         display.textContent += knappValue;
       }
     });
